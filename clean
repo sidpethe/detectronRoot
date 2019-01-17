@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rm -rf ~/detectronRoot/runFolder/kitti_results
+cd ~/detectronRoot/runFolder/
+rm -rf centroids.txt
+mkdir kitti_results
+cd kitti_results/
+mkdir pred_list
+mkdir pred_img
+
