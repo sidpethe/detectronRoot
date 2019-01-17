@@ -12,23 +12,24 @@ A modification was made to the detectron code to provide a mask of each detected
   <p>Example Mask given for object 001 of input image.</p>
 </div>
 
-## Installation Instructions
-There are a few things to know before you can run the model. 
-1. In your home directory, run the following code:
+## Installation Instructions 
+In your home directory, run the following code: (IMP: This code MUST be cloned to the home directory)
 
+1. Create a folder for weights and get the weight file.
 ```
-mkdir detectronRoot
 mkdir DetectronModelWts
-cd detectronRoot/ 
-git clone https://github.com/sidpethe/detectronHelperScripts.git
+cd DetectronModelWts/
+wget -O ~/DetectronModelWts/e2e_mask_rcnn_R-101-FPN_2x.pkl https://dl.fbaipublicfiles.com/detectron/35861858/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml.02_32_51.SgT4y1cO/output/train/coco_2014_train:coco_2014_valminusminival/generalized_rcnn/model_final.pkl 
 ```
-
-2. Next, download the detectron pretrained weights file for [End to End Faster & Mask RCNN 2x](https://dl.fbaipublicfiles.com/detectron/35861858/12_2017_baselines/e2e_mask_rcnn_R-101-FPN_2x.yaml.02_32_51.SgT4y1cO/output/train/coco_2014_train:coco_2014_valminusminival/generalized_rcnn/model_final.pkl). 
-
-3. Place this file in the folder ~/DetectronModelWts and rename it to *e2e_mask_rcnn_R-101-FPN_2x.pkl*
-
-4. For Detectron installation instructions, look at [Installing Detectron](https://github.com/facebookresearch/Detectron/blob/master/INSTALL.md)
-
+2. Clone the repository with helper scripts
+```
+git clone https://github.com/sidpethe/detectronRoot.git
+```
+3. Clone the forked Detectron Repository
+```
+cd detectronRoot/
+git clone https://github.com/sidpethe/Detectron.git
+```
 
 ## Scripts
 
@@ -41,6 +42,12 @@ Changes can be made to variables based on your implementation.
 This file is used to prepare the output folder (runFolder) for the next set of images.
 
 NOTE: Make sure you copy the results you need *BEFORE* you run this file.
+
+## Related Repositories
+
+This section contains links to some of the other repositories that may be useful in implementing Mask RCNN for use with KITTI and V-KITTI datasets.
+1. [Detectron](https://github.com/sidpethe/Detectron.git): Forked Detectron implementation for use with KITTI and V-KITTI datasets.
+2. [vkittiToKitti](https://github.com/sidpethe/vkittiToKitti.git): Converting the vkitti ground truth to kitti compatible ground truth. 
 
 ## Author
 Sid Pethe is a recent graduate from the Australian National University after completing a Master of Engineering(Mechatronics). 
