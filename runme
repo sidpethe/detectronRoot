@@ -10,12 +10,18 @@ outputDirectory=~/detectronRoot/runFolder/kitti_results/
 inputExtension=png
 outputExtension=png
 weightsFilePath=~/DetectronModelWts/e2e_mask_rcnn_R-101-FPN_2x.pkl
+
+#Note to MINA: No spaces in the variable declaration (even before or after the =) 
 inputDirectory=~/detectronRoot/input/
+
+#/media/sid/JunHDD/dynamic_slam_data/kings.ave.II/video_18-04-2019_14-57-39/image/rectified/img_0/
+#inputDirectory=/media/sid/3e5e9a84-0ae4-40ff-8147-e467c332d0da/dataset/vKITTI/0020/input/ 
 detectionThreshold=0.7
 JunVis=false
 
 if $JunVis; then
-    python2 ~/detectronRoot/Detectron/tools/infer_simple.py --cfg $configFile --output-dir $outputDirectory  --output-ext $outputExtension  --image-ext $inputExtension --Jun-vis  --wts $weightsFilePath --thresh $detectionThreshold  $inputDirectory
+    python2 ~/detectronRoot/Detectron/tools/infer_simple.py --cfg $configFile --output-dir $outputDirectory --output-ext $outputExtension --image-ext $inputExtension --Jun-vis --wts $weightsFilePath --thresh $detectionThreshold $inputDirectory
 else
+    echo python2 ~/detectronRoot/Detectron/tools/infer_simple.py --cfg $configFile --output-dir $outputDirectory  --output-ext $outputExtension  --image-ext $inputExtension  --wts $weightsFilePath --thresh $detectionThreshold  $inputDirectory
     python2 ~/detectronRoot/Detectron/tools/infer_simple.py --cfg $configFile --output-dir $outputDirectory  --output-ext $outputExtension  --image-ext $inputExtension  --wts $weightsFilePath --thresh $detectionThreshold  $inputDirectory
 fi

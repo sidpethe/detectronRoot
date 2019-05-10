@@ -29,8 +29,14 @@ git clone https://github.com/sidpethe/detectronRoot.git
 ```
 cd detectronRoot/
 git clone https://github.com/sidpethe/Detectron.git
+cd Detectron/ && make
 ```
-
+###Troubleshooting
+If you get an error saying: 
+'''
+CUDNN_STATUS_NOT_INITIALIZED
+'''
+Try reinstalling libcudnn debian file. 
 ## Scripts
 
 ### runme 
